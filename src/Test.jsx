@@ -38,7 +38,7 @@ const Test = () => {
     const [loading, setLoading] = useState(false);
     const time = useMemo(() => {
         let time = new Date();
-        time.setSeconds(time.getSeconds() + Number(1000000))
+        time.setSeconds(time.getSeconds() + Number(duration))
         return time;
     }, [duration])
 
