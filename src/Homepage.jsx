@@ -26,7 +26,6 @@ const Homepage = () => {
         // navigate(ROUTES.TEST.replace(":level", level).replace(":duration", duration))
 
         const resend = new Resend('re_Eey2qJM4_85gvYaiHNvA2doKqppndjME8');
-
         (async function () {
             const { data, error } = await resend.emails.send({
                 from: 'Acme <lovepreet.singh@antiersolutions.com>',
