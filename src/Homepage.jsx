@@ -3,8 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import Select from "react-select";
 import { LEVELS, ROUTES } from './utils/constants';
 import { getSelectValue } from './utils/utils';
-import { Resend } from 'resend';
-import { template } from './email-temple';
 
 const Homepage = () => {
     const navigate = useNavigate();
@@ -23,23 +21,7 @@ const Homepage = () => {
     const [level, setLevel] = useState(LEVELS.MEDIUM);
     const handleSubmit = e => {
         e.preventDefault();
-        // navigate(ROUTES.TEST.replace(":level", level).replace(":duration", duration))
-
-        const resend = new Resend('re_Eey2qJM4_85gvYaiHNvA2doKqppndjME8');
-        (async function () {
-            const { data, error } = await resend.emails.send({
-                from: 'Acme <lovepreet.singh@antiersolutions.com>',
-                to: ['lovepreet.singh@antiersolutions.com'],
-                subject: 'Hello World',
-                html: template,
-            });
-
-            if (error) {
-                return console.error({ error });
-            }
-
-            console.log({ data });
-        })();
+        navigate(ROUTES.TEST.replace(":level", level).replace(":duration", duration))
     }
     return (
         <div className='homepage'>
