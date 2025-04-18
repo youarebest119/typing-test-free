@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && cp _redirects dist",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -23,6 +23,7 @@
     "react-timer-hook": "^4.0.5",
     "recharts": "^2.15.2",
     "redux-persist": "^6.0.0",
+    "resend": "^4.3.0",
     "sass": "^1.86.3"
   },
   "devDependencies": {
