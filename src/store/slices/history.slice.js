@@ -1,22 +1,22 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-    history: [],
+  history: [],
 }
 
 export const historySlice = createSlice({
-    name: "history",
-    initialState,
-    reducers: {
-        addHistory: (state, action) => {
-            state.history = [...state.history, action.payload];
-        },
-        removeHistory: (state, action) => {
-            state.history = state.history.filter(item => item.id !== action.payload);
-        },
-        resetHistory: state => {
-            state.history = [];
-        }
-    }
+  name: "history",
+  initialState,
+  reducers: {
+    addHistory: (state, action) => {
+      state.history = [...state.history, action.payload]
+    },
+    removeHistory: (state, action) => {
+      state.history = state.history.filter((item) => item.id !== action.payload)
+    },
+    resetHistory: (state) => {
+      state.history = []
+    },
+  },
 })
-export const { addHistory, removeHistory, resetHistory } = historySlice.actions;
+export const { addHistory, removeHistory, resetHistory } = historySlice.actions
